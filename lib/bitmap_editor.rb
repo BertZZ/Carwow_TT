@@ -1,4 +1,5 @@
 require_relative 'colourer'
+require_relative 'cleaner'
 
 class BitmapEditor
 
@@ -16,6 +17,8 @@ class BitmapEditor
       case line[0]
       when 'I'
         @array = Array.new(line[2].to_i) { Array.new(line[1].to_i, 'O') }
+      when 'C'
+        @array = Cleaner.clear_map(@array)
       when 'L'
         @array = Colourer.colour_cell(@array, line[1], line[2], line[3])
       when 'V'
