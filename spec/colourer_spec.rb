@@ -22,5 +22,4 @@ describe Colourer do
       expect(array).to eq([["O", "O", "O"], ["O", "T", "O"], ["O", "T", "O"], ["O", "O", "O"]])
     end
   end
-
 end

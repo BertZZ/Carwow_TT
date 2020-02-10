@@ -29,5 +29,15 @@ describe BitmapEditor do
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"]])
     end
+
+    it 'colours part of a column when given a line starting with V' do
+      subject.run('colour_column_test.txt')
+      expect(subject.array).to eq([["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "T", "O"],
+                                   ["O", "O", "O", "T", "O"],
+                                   ["O", "O", "O", "T", "O"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"]])
+    end
   end
 end
