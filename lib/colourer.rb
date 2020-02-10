@@ -12,4 +12,9 @@ class Colourer
     array
   end
 
+  def self.colour_row(array,n1,n2,row,colour)
+    array[row.to_i-1].fill(colour,(n1.to_i-1)..(n2.to_i-1))
+    array
+  end
+
 end

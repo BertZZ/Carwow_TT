@@ -1,4 +1,4 @@
-require 'colourer'
+require_relative 'colourer'
 
 class BitmapEditor
 
