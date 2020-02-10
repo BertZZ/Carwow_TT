@@ -18,6 +18,7 @@ class BitmapEditor
       line = line.chomp.split
       case line[0]
       when 'I'
+        return puts "Please provide a non zero number of Rows or Columns" unless line[1].to_i > 0 && line[2].to_i > 0
         @array = Array.new(line[2].to_i) { Array.new(line[1].to_i, 'O') }
       when 'C'
         @array = Cleaner.clear_map(@array)
