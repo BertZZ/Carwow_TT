@@ -1,4 +1,3 @@
-require 'spec_helper'
 require './lib/bitmap_editor'
 
 describe BitmapEditor do
@@ -16,6 +15,16 @@ describe BitmapEditor do
       expect(subject.array).to eq([["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"]])
+    end
+
+    it 'colours a specific cell when given a line starting with L' do
+      subject.run('colour_cell_test.txt')
+      expect(subject.array).to eq([["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "T", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"]])

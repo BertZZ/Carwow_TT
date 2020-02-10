@@ -1,3 +1,5 @@
+require 'colourer'
+
 class BitmapEditor
 
   attr_accessor :array
@@ -14,6 +16,8 @@ class BitmapEditor
       case line[0]
       when 'I'
         @array = Array.new(line[2].to_i) { Array.new(line[1].to_i, 'O') }
+      when 'L'
+        @array = Colourer.colour_cell(@array, line[1], line[2], line[3])
       when 'S'
           puts "There is no image"
       else
