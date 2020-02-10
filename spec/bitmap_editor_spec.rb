@@ -39,5 +39,15 @@ describe BitmapEditor do
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"]])
     end
+
+    it 'colours part of a row when given a line starting with H' do
+      subject.run('colour_row_test.txt')
+      expect(subject.array).to eq([["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "T", "T", "T", "T"],
+                                   ["O", "O", "O", "O", "O"],
+                                   ["O", "O", "O", "O", "O"]])
+    end
   end
 end

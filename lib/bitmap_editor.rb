@@ -20,6 +20,8 @@ class BitmapEditor
         @array = Colourer.colour_cell(@array, line[1], line[2], line[3])
       when 'V'
         @array = Colourer.colour_column(@array, line[1], line[2], line[3], line[4])
+      when 'H'
+        @array = Colourer.colour_row(@array, line[1], line[2], line[3], line[4])
       when 'S'
           puts "There is no image"
       else
