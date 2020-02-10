@@ -1,5 +1,6 @@
 require_relative 'colourer'
 require_relative 'cleaner'
+require_relative 'printer'
 
 class BitmapEditor
 
@@ -26,7 +27,7 @@ class BitmapEditor
       when 'H'
         @array = Colourer.colour_row(@array, line[1], line[2], line[3], line[4])
       when 'S'
-          puts "There is no image"
+          Printer.print_map(@array)
       else
           puts 'unrecognised command :('
       end
