@@ -11,7 +11,8 @@ class BitmapEditor
   end
 
   def run(file)
-    return puts "please provide correct file" if file.nil? || !File.exists?(file)
+    return puts "Please provide correct file" if file.nil? || !File.exists?(file)
+    return puts "Please create a new bitmap first" unless File.open(file).readlines[0].chomp.split[0] == 'I'
 
     File.open(file).each do |line|
       line = line.chomp.split
