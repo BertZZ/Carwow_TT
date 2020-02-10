@@ -12,6 +12,7 @@ There are 6 supported commands:
 - H X1 X2 Y C - Draw a horizontal segment of colour C in row Y between columns X1 and X2 (inclusive).
 - S - Show the contents of the current image
 
+## Tips
 - Please make sure the first Line of your file is a I command so you have a bitmap created
 - Don't try to colour cells outside the range of the bitmap you created
 
