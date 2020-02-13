@@ -83,5 +83,13 @@ describe BitmapEditor do
     it 'Does not allow column greater than the number of columns to be colured' do
         expect{ subject.run('spec/files/column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
     end
+
+    it 'Does not allow columns to be coloured between non existant rows' do
+        expect{ subject.run('spec/files/vertical_row_out_of_range.txt') }.to raise_error("This row does not exist. Please check your inputs")
+    end
+
+    it 'Does not allow rows to be coloured between non existant columns' do
+        expect{ subject.run('spec/files/horizontal_column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
+    end
   end
 end
