@@ -59,37 +59,48 @@ describe BitmapEditor do
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"]])
     end
-
-    it 'Does not allow Bitmaps of 0 columns to be created' do
-      expect{ subject.run('spec/files/0_columns.txt') }.to output("Please provide a non zero number of Rows or Columns\n").to_stdout
+    it 'Prints the bitmap to the console when given a line starting with S' do
+      expect{ subject.run('spec/files/print_test.txt') }.to output("OOOOO\nOOZZZ\nAWOOO\nOWOOO\nOWOOO\nOWOOO\n").to_stdout
     end
 
-    it 'Does not allow Bitmaps of 0 Rows to be created' do
-      expect{ subject.run('spec/files/0_rows.txt') }.to output("Please provide a non zero number of Rows or Columns\n").to_stdout
+    it 'Outputs unrecognised command when given any other letter to start a line' do
+      expect{ subject.run('spec/files/random.txt') }.to output("unrecognised command :(\n").to_stdout
     end
+  end
 
-    it 'Does not allow a cell with invalid X coordinate to be selected' do
-      expect{ subject.run('spec/files/invalid_X.txt') }.to raise_error("This X coordinate does not exist")
-    end
+  it 'Does not allow Bitmaps of 0 columns to be created' do
+    expect{ subject.run('spec/files/0_columns.txt') }.to output("Please provide a non zero number of Rows or Columns\n").to_stdout
+  end
 
-    it 'Does not allow a cell with invalid Y coordinate to be selected' do
-      expect{ subject.run('spec/files/invalid_Y.txt') }.to raise_error("This Y coordinate does not exist")
-    end
+  it 'Does not allow Bitmaps of 0 Rows to be created' do
+    expect{ subject.run('spec/files/0_rows.txt') }.to output("Please provide a non zero number of Rows or Columns\n").to_stdout
+  end
 
-    it 'Does not allow row greater than the number of rows to be coloured' do
-      expect{ subject.run('spec/files/row_out_of_range.txt') }.to raise_error("This row does not exist. Please check your inputs")
-    end
+  it 'Does not allow coordinates of 0 to be entered' do
+    expect{ subject.run('spec/files/target_0.txt') }.to raise_error("Please check your file and enter a non 0 coordinate")
+  end
 
-    it 'Does not allow column greater than the number of columns to be colured' do
-        expect{ subject.run('spec/files/column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
-    end
+  it 'Does not allow a cell with invalid X coordinate to be selected' do
+    expect{ subject.run('spec/files/invalid_X.txt') }.to raise_error("This X coordinate does not exist")
+  end
 
-    it 'Does not allow columns to be coloured between non existant rows' do
-        expect{ subject.run('spec/files/vertical_row_out_of_range.txt') }.to raise_error("This row does not exist. Please check your inputs")
-    end
+  it 'Does not allow a cell with invalid Y coordinate to be selected' do
+    expect{ subject.run('spec/files/invalid_Y.txt') }.to raise_error("This Y coordinate does not exist")
+  end
 
-    it 'Does not allow rows to be coloured between non existant columns' do
-        expect{ subject.run('spec/files/horizontal_column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
-    end
+  it 'Does not allow row greater than the number of rows to be coloured' do
+    expect{ subject.run('spec/files/row_out_of_range.txt') }.to raise_error("This row does not exist. Please check your inputs")
+  end
+
+  it 'Does not allow column greater than the number of columns to be colured' do
+      expect{ subject.run('spec/files/column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
+  end
+
+  it 'Does not allow columns to be coloured between non existant rows' do
+      expect{ subject.run('spec/files/vertical_row_out_of_range.txt') }.to raise_error("This row does not exist. Please check your inputs")
+  end
+
+  it 'Does not allow rows to be coloured between non existant columns' do
+      expect{ subject.run('spec/files/horizontal_column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
   end
 end

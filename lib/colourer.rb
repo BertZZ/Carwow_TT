@@ -33,7 +33,7 @@ class Colourer
       if a.to_i > 0
         next
       else
-        raise "Please check your file and enter valid non 0 arguments"
+        raise "Please check your file and enter a non 0 coordinate"
       end
     end
   end
@@ -54,14 +54,14 @@ class Colourer
     end
   end
 
-  def self.check_column_length(array, n1)
-    if n1.to_i > array[0].length
+  def self.check_column_length(array, n)
+    if n.to_i > array[0].length
       raise "This X coordinate does not exist"
     end
   end
 
-  def self.check_row_length(array, n2)
-    if n2.to_i > array.length
+  def self.check_row_length(array, n)
+    if n.to_i > array.length
       raise "This Y coordinate does not exist"
     end
   end
