@@ -68,14 +68,20 @@ describe BitmapEditor do
       expect{ subject.run('spec/files/0_rows.txt') }.to output("Please provide a non zero number of Rows or Columns\n").to_stdout
     end
 
-    # Running these specs causes the rest of the test suite not to run which is the reason they were not included in the original solution
-    
-    # it 'Does not allow co-ordinates greater than the number of rows to be selected' do
-    #   expect{ subject.run('spec/files/row_out_of_range.txt') }.to output("This row does not exist. Please check your inputs\n").to_stdout
-    # end
-    #
-    # it 'Does not allow cordinates greater than the number of columns to be selected' do
-    #     expect{ subject.run('spec/files/column_out_of_range.txt') }.to output("This column does not exist. Please check your inputs\n").to_stdout
-    # end
+    it 'Does not allow a cell with invalid X coordinate to be selected' do
+      expect{ subject.run('spec/files/invalid_X.txt') }.to raise_error("This X coordinate does not exist")
+    end
+
+    it 'Does not allow a cell with invalid Y coordinate to be selected' do
+      expect{ subject.run('spec/files/invalid_Y.txt') }.to raise_error("This Y coordinate does not exist")
+    end
+
+    it 'Does not allow row greater than the number of rows to be coloured' do
+      expect{ subject.run('spec/files/row_out_of_range.txt') }.to raise_error("This row does not exist. Please check your inputs")
+    end
+
+    it 'Does not allow column greater than the number of columns to be colured' do
+        expect{ subject.run('spec/files/column_out_of_range.txt') }.to raise_error("This column does not exist. Please check your inputs")
+    end
   end
 end
