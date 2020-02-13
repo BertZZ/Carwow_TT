@@ -37,19 +37,19 @@ class Colourer
     end
   end
 
-  def self.check_column_length(array, *args)
+  def self.check_row_length(array, *args)
     args.each do |a|
       if a.to_i > array.length
-        puts "This cell does not exist. Please check your inputs"
+        puts "This row does not exist. Please check your inputs"
         exit
       end
     end
   end
 
-  def self.check_row_length(array, *args)
+  def self.check_column_length(array, *args)
     args.each do |a|
       if a.to_i > array[0].length
-        puts "This cell does not exist. Please check your inputs"
+        puts "This column does not exist. Please check your inputs"
         exit
       end
     end
