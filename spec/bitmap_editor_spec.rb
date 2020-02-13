@@ -10,7 +10,7 @@ describe BitmapEditor do
   end
 
   describe '#run' do
-    it 'creates an array of 5 rows and 6 columns when given an input I56' do
+    it 'creates an array of 6 rows and 5 columns when given an input I56' do
       subject.run('spec/files/create_array_test.txt')
       expect(subject.array).to eq([["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"],
@@ -58,6 +58,16 @@ describe BitmapEditor do
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"],
                                    ["O", "O", "O", "O", "O"]])
+    end
+
+    it 'Does not allow Bitmaps of 0 columns to be created' do
+    end
+    it 'Does not allow Bitmaps of 0 Rows to be created' do
+    end
+    it 'Does not allow co-ordinates greater than the number of rows to be selected' do
+    end
+    it 'Does not allow cordinates greater than the number of columns to be selected' do
+    end
     end
   end
 end
