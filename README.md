@@ -24,4 +24,7 @@ There are 6 supported commands:
 Running the bitmap command script from the provided Task Document:
 ![Screenshot from 2020-02-10 16-43-41](https://user-images.githubusercontent.com/26028408/74175528-ece6a800-4c2d-11ea-956f-7720cdb438c2.png)
 All tests passing:
-![Screenshot from 2020-02-10 17-44-39](https://user-images.githubusercontent.com/26028408/74175859-87df8200-4c2e-11ea-9f9d-25dcb9667952.png)
+![Screenshot from 2020-02-13 22-50-17](https://user-images.githubusercontent.com/26028408/74485705-3c89d580-4eb3-11ea-9560-d5ae406430fb.png)
+100% coverage: 
+![Screenshot from 2020-02-13 22-48-38](https://user-images.githubusercontent.com/26028408/74485605-0a787380-4eb3-11ea-8207-2ee137fbfb08.png)
+
